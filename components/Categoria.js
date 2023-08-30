@@ -1,13 +1,15 @@
+import React, { useContext } from "react";
+import { QuioscoContext } from "../context/QuioscoProvider";
 import Image from "next/image";
-import useQuiosco from "../hooks/useQuiosco";
+//import useQuiosco from "../hooks/useQuiosco";
 
 const Categoria = ({ categoria }) => {
-  const { categoriaActual, handleClickCategoria } = useQuiosco();
+  const { categoriaActual, handleClickCategoria } = useContext(QuioscoContext);
   const { nombre, icono, id } = categoria;
   return (
     <div
       className={`${
-        categoriaActual?.id === id ? "bg-amber-400" : ""
+        categoriaActual?.id === id ? "flex items-center bg-amber-400" : ""
       }flex items-center gap-4 w-full border p-5 hover:bg-amber-400`}
     >
       <Image
