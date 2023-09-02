@@ -56,7 +56,7 @@ function ModalProducto() {
           <button
             type="button"
             onClick={() => {
-              if (cantidad >= 0) return;
+              if (cantidad <= 0) return;
               setCantidad(cantidad - 1);
             }}
           >
